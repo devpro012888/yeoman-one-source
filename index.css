@@ -8,7 +8,8 @@ body {
 /* Main container to push content below the navbar */
 .main-content {
   margin-top: 56px; /* Adjust this value to match the height of the navbar */
-  margin-left: 200px; /* Same as the sidebar width */
+  margin-left: 300px; /* Same as the sidebar width */
+  margin-right: 300px; /* Same as the sidebar2 width */
   padding: 20px;
 }
 
@@ -17,11 +18,22 @@ body {
   position: fixed;
   top: 56px; /* Same as the navbar height */
   left: 0;
-  width: 200px;
+  width: 300px;
   height: calc(100vh - 56px); /* Full height minus navbar height */
   background-color: #f8f9fa;
   padding-top: 20px;
   border-right: 1px solid #ddd;
+}
+
+.sidebar2 {
+  position: fixed;
+  top: 56px; /* Same as the navbar height */
+  right: 0; /* Same as the sidebar width */
+  width: 300px;
+  height: calc(100vh - 56px); /* Full height minus navbar height */
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  border-left: 1px solid #ddd;
 }
 
 .sidebar a {
@@ -48,4 +60,40 @@ body {
 
 footer {
   text-align: center;
+}
+
+.date-today {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-controls button {
+  margin: 0 10px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.calendar .header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.calendar .today {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
 }

@@ -7,7 +7,7 @@ body {
 
 /* Main container to push content below the navbar */
 .main-content {
-  margin-top: 56px; /* Adjust this value to match the height of the navbar */
+  margin-top: 20px; /* Adjust this value to match the height of the navbar */
   margin-left: 300px; /* Same as the sidebar width */
   margin-right: 300px; /* Same as the sidebar2 width */
   padding: 20px;
@@ -25,15 +25,17 @@ body {
   border-right: 1px solid #ddd;
 }
 
+/* Right Sidebar styles */
 .sidebar2 {
   position: fixed;
   top: 56px; /* Same as the navbar height */
-  right: 0; /* Same as the sidebar width */
+  right: 0;
   width: 300px;
   height: calc(100vh - 56px); /* Full height minus navbar height */
   background-color: #f8f9fa;
   padding-top: 20px;
   border-left: 1px solid #ddd;
+  text-align: center;
 }
 
 .sidebar a {
@@ -64,9 +66,8 @@ footer {
 
 .date-today {
   font-size: 18px;
-  margin-bottom: 20px;
   font-weight: bold;
-  text-align: center;
+  margin-top: 20px;
 }
 
 .calendar-controls {

@@ -13,6 +13,27 @@ body {
   padding: 20px;
 }
 
+/* 
+  Styles for a dropdown menu component:
+  - Positioned absolutely relative to its nearest positioned ancestor.
+  - Appears directly below the triggering element (top: 100%; left: 0).
+  - Z-index ensures it appears above other elements when displayed.
+  - Initially hidden (display: none) until triggered.
+  - Styled with a light background color (#f8f9fa) and a border for visibility.
+  - Fixed height of 300px with scrollable content (overflow: auto) for long lists.
+*/
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  height: 300px;
+  overflow: auto;
+}
+
 /* Sidebar styles */
 .sidebar {
   position: fixed;

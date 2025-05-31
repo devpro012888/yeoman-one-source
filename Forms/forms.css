@@ -1,10 +1,13 @@
-table {
-    border: 2px solid black;
-    width: 800px;
-    text-align: center;
-}
-
 thead {
     background-color: darkblue;
     color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    border: 1px solid black;
 }

@@ -1,14 +1,17 @@
-thead {
-    background-color: darkblue;
-    color: white;
-}
-
 table {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     border-collapse: collapse;
-    margin: 0 auto
 }
 
-tr {
+thead {
+    background-color: #004080;
+    color: white;
     border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    padding: 3px;
+    font-size: 13px;
 }

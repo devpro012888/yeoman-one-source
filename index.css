@@ -107,7 +107,7 @@ footer {
 }
 
 #clock {
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-family: monospace;
     font-weight: bold;
 }
@@ -124,4 +124,19 @@ footer {
   font-weight: 200;
   margin: 8px 0 12px 0;
   color: var(--color-primary);
+}
+
+.sectionone {
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.sectiontwo {
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
 }

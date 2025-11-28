@@ -106,4 +106,22 @@ footer {
   text-align: center;
 }
 
-/* Calendar styles removed (calendar was deleted from the right sidebar). */
+#clock {
+    font-size: 2rem;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+/* Sidebar date and clock styles */
+.sidebar-date {
+  margin: 8px 0;
+  font-size: 25px;
+  color: var(--color-text);
+}
+.sidebar-clock {
+  font-size: 0.25rem;
+  font-family: monospace;
+  font-weight: 200;
+  margin: 8px 0 12px 0;
+  color: var(--color-primary);
+}

@@ -31,5 +31,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }, msUntilMidnight);
   }
 
-  scheduleDailyUpdateAtMidnight();
+  // Only schedule midnight updates if the element exists on the page
+  if (document.getElementById('currentDate')) {
+    scheduleDailyUpdateAtMidnight();
+  }
 });
+
+// Simple digital clock updating every second
+// Simple digital clock updating every second
+function updateClock() {
+    const clockEl = document.getElementById('clock');
+    if (!clockEl) return; // If missing, just skip
+    const now = new Date();
+
+    // Format time with leading zeros
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    clockEl.textContent = timeString;
+}
+
+// Update immediately, then schedule aligned second updates (only if #clock exists)
+if (document.getElementById('clock')) {
+  function scheduleClock() {
+    updateClock();
+    // Align to next second boundary
+    const now = new Date();
+    const delay = 1000 - now.getMilliseconds();
+    setTimeout(() => {
+      // Respect page visibility: don't spin when hidden
+      if (document.hidden) {
+        // Try again on visibility change
+        document.addEventListener('visibilitychange', function onVis() {
+          if (!document.hidden) {
+            document.removeEventListener('visibilitychange', onVis);
+            scheduleClock();
+          }
+        });
+        return;
+      }
+      scheduleClock();
+    }, delay);
+  }
+  scheduleClock();
+}

@@ -77,3 +77,8 @@ if (document.getElementById('clock')) {
   }
   scheduleClock();
 }
+
+//Popup Box
+window.onload = function() {
+  alert("Welcome to Yeoman One Source!  Next Paycut Date: 30 June 2024");
+}

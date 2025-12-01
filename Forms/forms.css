@@ -30,3 +30,10 @@ h1 {
     background-color: #004080;
     color: white;
 }
+
+.button {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    text-align: center;
+}

@@ -23,34 +23,6 @@
     });
   }
 
-  // CSV export
-  const exportBtn = document.getElementById("exportCsv");
-  if (exportBtn && tbody) {
-    exportBtn.addEventListener("click", function () {
-      const visibleRows = rows().filter((r) => r.style.display !== "none");
-      const csv = visibleRows
-        .map((r) =>
-          Array.from(r.cells)
-            .map((c) => '"' + c.textContent.replace(/"/g, '""') + '"')
-            .join(","),
-        )
-        .join("\n");
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "forms.csv";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    });
-  }
-
-  // Print button
-  const printBtn = document.getElementById("printBtn");
-  if (printBtn) printBtn.addEventListener("click", () => window.print());
-
   // Make rows clickable for anchors (mobile friendly)
   document.addEventListener("click", function (e) {
     const tr = e.target.closest("tr");

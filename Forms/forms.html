@@ -1,205 +1,498 @@
-<!DOCYTYPE html>
-  <html lang="en">
-    <head>
-      <title>Forms and Worksheets</title>
-      <link rel="stylesheet" href="forms.css" type="text/css">
-    </head>
-    <body>
-      <h1>Forms and Worksheets</h1>
-      <a class="button" href="https://devpro012888.github.io/yeoman-one-source/"><button type="button">Back to Home</button></a>
-      <table>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Forms and Worksheets</title>
+    <link rel="stylesheet" href="forms.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Forms and Worksheets</h1>
+
+    <div class="controls" role="region" aria-label="Table controls">
+      <a
+        class="button"
+        href="https://devpro012888.github.io/yeoman-one-source/"
+        role="button"
+        >Back to Home</a
+      >
+      <label for="tableSearch">Filter:</label>
+      <input
+        id="tableSearch"
+        type="text"
+        placeholder="Filter forms..."
+        aria-label="Filter forms"
+      />
+      <button id="exportCsv" class="button" type="button">Download CSV</button>
+      <button id="printBtn" class="button" type="button">Print</button>
+      <div style="flex: 1 1 auto"></div>
+      <div class="form-count" id="formCount">Showing: --</div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="forms-table" aria-describedby="formCount">
         <thead>
           <tr>
-            <th>Number</th>
-            <th>Title</th>
-            <th>Revised (MM/YY)</th>
+            <th scope="col">Number</th>
+            <th scope="col">Title</th>
+            <th scope="col">Revised (MM/YY)</th>
           </tr>
         </thead>
+        <tbody>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Dec/13/2003131999/-1/-1/0/CG_1001.PDF" target="_blank">CG-1001</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Dec/13/2003131999/-1/-1/0/CG_1001.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1001</a
+              >
+            </td>
             <td>Change in Reserve Component Category (RCC)</td>
             <td>01/21</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/28/2002963999/-1/-1/0/CG_1001A.PDF" target="_blank">CG-1001A</a></td>
-            <td>Electronic Based Distributed Learning (EBDL) Course Approval Request</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/28/2002963999/-1/-1/0/CG_1001A.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1001A</a
+              >
+            </td>
+            <td>
+              Electronic Based Distributed Learning (EBDL) Course Approval
+              Request
+            </td>
             <td>04/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/May/12/2001746407/-1/-1/0/CG_1001B.PDF" target="_blank">CG-1001B</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/May/12/2001746407/-1/-1/0/CG_1001B.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1001B</a
+              >
+            </td>
             <td>Monthly Incapacitation Claim Form (Member)</td>
             <td>04/16</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_1001C.pdf?ver=hkQSFpYkb3OUz0sC24l1eg%3d%3d" target="_blank">CG-1001C</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_1001C.pdf?ver=hkQSFpYkb3OUz0sC24l1eg%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1001C</a
+              >
+            </td>
             <td>Reserve Incapacitation Claim Form</td>
             <td>04/19</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/28/2002964001/-1/-1/0/CG_1002.PDF" target="_blank">CG-1002</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/28/2002964001/-1/-1/0/CG_1002.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1002</a
+              >
+            </td>
             <td>Lateral Change Request</td>
             <td>10/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Dec/13/2003132008/-1/-1/0/CG_1300.PDF" target="_blank">CG-1300</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Dec/13/2003132008/-1/-1/0/CG_1300.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1300</a
+              >
+            </td>
             <td>Report of Suitability for Overseas Assignment</td>
             <td>06/22</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/11/2001806686/-1/-1/0/CG_1300A.PDF" target="_blank">CG-1300A</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/11/2001806686/-1/-1/0/CG_1300A.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1300A</a
+              >
+            </td>
             <td>Debt to Income Ratio Calculator</td>
             <td>12/16</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/11/2001806692/-1/-1/0/CG_1300B.PDF" target="_blank">CG-1300B</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/11/2001806692/-1/-1/0/CG_1300B.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1300B</a
+              >
+            </td>
             <td>Active Duty Dependents Overseas Screening</td>
             <td>12/16</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/11/2001806721/-1/-1/0/CG_1570.PDF" target="_blank">CG-1570</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/11/2001806721/-1/-1/0/CG_1570.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1570</a
+              >
+            </td>
             <td>IDT Completion Sheet</td>
             <td>08/15</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/28/2002964002/-1/-1/0/CG_1650.PDF" target="_blank">CG-1650</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/28/2002964002/-1/-1/0/CG_1650.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1650</a
+              >
+            </td>
             <td>Coast Guard Award Recommendation</td>
             <td>02/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/08/2002952227/-1/-1/0/CG_1884.PDF" target="_blank">CG-1884</a></td>
-            <td>Application for Annuity Under The Survivor Benefit Plan (SBP), Reserve Component Survivor Benefit Plan
-                (RCSBP), Retired Serviceman's Family Protection Plan (RSFPP), and/or Final Retired Pay Due
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/08/2002952227/-1/-1/0/CG_1884.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-1884</a
+              >
+            </td>
+            <td>
+              Application for Annuity Under The Survivor Benefit Plan (SBP),
+              Reserve Component Survivor Benefit Plan (RCSBP), Retired
+              Serviceman's Family Protection Plan (RSFPP), and/or Final Retired
+              Pay Due
             </td>
             <td>07/13</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Apr/19/2002979717/-1/-1/0/CG_2000.PDF" target="_blank">CG-2000</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Apr/19/2002979717/-1/-1/0/CG_2000.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2000</a
+              >
+            </td>
             <td>PCS Departing Worksheet</td>
             <td>04/22</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811518/-1/-1/0/CG_2001.pdf" target="_blank">CG-2001</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811518/-1/-1/0/CG_2001.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2001</a
+              >
+            </td>
             <td>Departing TDY or PCS/TEMDUINS to "A" School Worksheet</td>
             <td>08/19</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811535/-1/-1/0/CG_2003.PDF" target="_blank">CG-2003</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811535/-1/-1/0/CG_2003.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2003</a
+              >
+            </td>
             <td>PCS Entitlements Advance Travel Worksheet</td>
             <td>05/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811556/-1/-1/0/CG_2005.pdf" target="_blank">CG-2005</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811556/-1/-1/0/CG_2005.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2005</a
+              >
+            </td>
             <td>PCS Reporting Worksheet</td>
             <td>06/19</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/15/2002956239/-1/-1/0/CG_2010.PDF" target="_blank">CG-2010</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/15/2002956239/-1/-1/0/CG_2010.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2010</a
+              >
+            </td>
             <td>Advances Worksheet</td>
             <td>08/13</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811559/-1/-1/0/CG_2015.pdf" target="_blank">CG-2015</a></td>
-            <td>Pay Delivery Worksheet - Direct Deposit/Electronic Funds Transfer</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811559/-1/-1/0/CG_2015.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2015</a
+              >
+            </td>
+            <td>
+              Pay Delivery Worksheet - Direct Deposit/Electronic Funds Transfer
+            </td>
             <td>03/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811603/-1/-1/0/CG_2016.PDF" target="_blank">CG-2016</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811603/-1/-1/0/CG_2016.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2016</a
+              >
+            </td>
             <td>Request for Duplicate or Replacement IRS Form W-2</td>
             <td>03/15</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811611/-1/-1/0/CG_2020.pdf" target="_blank">CG-2020</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811611/-1/-1/0/CG_2020.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2020</a
+              >
+            </td>
             <td>Dependency Worksheet</td>
             <td>06/19</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811613/-1/-1/0/CG_2020A.PDF" target="_blank">CG-2020A</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811613/-1/-1/0/CG_2020A.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2020A</a
+              >
+            </td>
             <td>Support Statement</td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811618/-1/-1/0/CG_2020C.PDF" target="_blank">CG-2020C</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811618/-1/-1/0/CG_2020C.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2020C</a
+              >
+            </td>
             <td>Former Spouse Statement</td>
             <td>04/15</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811623/-1/-1/0/CG_2020D.PDF" target="_blank">CG-2020D</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811623/-1/-1/0/CG_2020D.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2020D</a
+              >
+            </td>
             <td>Designation of Beneficiaries</td>
             <td>09/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Dec/22/2003137106/-1/-1/0/CG_2025.PDF" target="_blank">CG-2025</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Dec/22/2003137106/-1/-1/0/CG_2025.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2025</a
+              >
+            </td>
             <td>BAH/Housing Worksheet</td>
             <td>06/21</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2025A.pdf?ver=4mvr_bBrg-nmgO1zbGLp3A%3d%3d" target="_blank">CG-2025A</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2025A.pdf?ver=4mvr_bBrg-nmgO1zbGLp3A%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2025A</a
+              >
+            </td>
             <td>Housing Allowance (BAH/OHA) Protection Worksheet</td>
             <td>02/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811913/-1/-1/0/CG_2025B.PDF" target="_blank">CG-2025B</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811913/-1/-1/0/CG_2025B.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2025B</a
+              >
+            </td>
             <td>Member Maried to Member BAH Worksheet</td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2026.PDF?ver=nCBcoUk2T70BJGNk9ANTmw%3d%3d" target="_blank">CG-2026</a></td>
-            <td>OCONUS Early Return of Dependents (ERD) - Request for TONO/LOA</td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2026.PDF?ver=nCBcoUk2T70BJGNk9ANTmw%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2026</a
+              >
+            </td>
+            <td>
+              OCONUS Early Return of Dependents (ERD) - Request for TONO/LOA
+            </td>
             <td>06/23</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Oct/24/2001832067/-1/-1/0/CG_2030.pdf">CG-2030</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Oct/24/2001832067/-1/-1/0/CG_2030.pdf"
+                >CG-2030</a
+              >
+            </td>
             <td>Career Development Worksheet</td>
             <td>06/19</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2035.PDF?ver=_phD0zB2g4UO147IdChYjA%3d%3d" target="_blank">CG-2035</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2035.PDF?ver=_phD0zB2g4UO147IdChYjA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2035</a
+              >
+            </td>
             <td>Family Separation Allowance (FSA) Worksheet</td>
             <td>05/21</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2019/Jun/12/2002144020/-1/-1/0/CG_2036.pdf" target="_blank">CG-2036</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2019/Jun/12/2002144020/-1/-1/0/CG_2036.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2036</a
+              >
+            </td>
             <td>Career Sea Pay Premium Worksheet</td>
             <td>06/19</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Sep/18/2001811924/-1/-1/0/CG_2040.PDF" target="_blank">CG-2040</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Sep/18/2001811924/-1/-1/0/CG_2040.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2040</a
+              >
+            </td>
             <td>Allotment Worksheet</td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2019/Jun/13/2002145127/-1/-1/0/CG_2044.pdf" target="_blank">CG-2044</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2019/Jun/13/2002145127/-1/-1/0/CG_2044.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2044</a
+              >
+            </td>
             <td>Special Duty Pay Worksheet</td>
             <td>06/19</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2045.PDF?ver=FTpOLay6UQvDPjmKTkhCTA%3d%3d" target="_blank">CG-2045</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_2045.PDF?ver=FTpOLay6UQvDPjmKTkhCTA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2045</a
+              >
+            </td>
             <td>Career Intentions Worksheet</td>
             <td>03/25</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Oct/02/2001820636/-1/-1/0/CG_2050.pdf" target="_blank">CG-2050</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Oct/02/2001820636/-1/-1/0/CG_2050.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2050</a
+              >
+            </td>
             <td>Nonreceipt Worksheet</td>
             <td>03/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Oct/02/2001820645/-1/-1/0/CG_2055A.pdf" target="_blank">CG-2055A</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Oct/02/2001820645/-1/-1/0/CG_2055A.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2055A</a
+              >
+            </td>
             <td>Reserve Retirement Transfer Request</td>
             <td>04/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/08/2002952229/-1/-1/0/CG_2070.PDF" target="_blank">CG-2070</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/08/2002952229/-1/-1/0/CG_2070.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2070</a
+              >
+            </td>
             <td>TDY Travel Request/Authorization Worksheet</td>
             <td>06/13</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/28/2002964009/-1/-1/0/CG_2075.PDF" target="_blank">CG-2075</a></td>
-            <td>Family Subsistence Supplemental Allowance (FSSA) Application</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/28/2002964009/-1/-1/0/CG_2075.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-2075</a
+              >
+            </td>
+            <td>
+              Family Subsistence Supplemental Allowance (FSSA) Application
+            </td>
             <td>06/12</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Oct/18/2001829097/-1/-1/0/CG_3600.PDF" target="_blank">CG-3600</a></td>
-            <td>Designation of Beneficiary for Payment of Unpaid Retired Pay</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Oct/18/2001829097/-1/-1/0/CG_3600.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-3600</a
+              >
+            </td>
+            <td>
+              Designation of Beneficiary for Payment of Unpaid Retired Pay
+            </td>
             <td>08/12</td>
           </tr>
           <tr>
@@ -208,64 +501,162 @@
               <table class="table1">
                 <tr>
                   <td>CG-3788A</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788A.PDF?ver=6vVriO4urhGXz5IONdEEdw%3d%3d" target="_blank">ENLISTED EVALUATION REPORT NONRATED OR RATED SEAMAN/FIREMAN</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788A.PDF?ver=6vVriO4urhGXz5IONdEEdw%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT NONRATED OR RATED
+                      SEAMAN/FIREMAN</a
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td>CG-3788B</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788B.PDF?ver=AQMChLm72UDPMUsHBeKWHw%3d%3d" target="_blank">ENLISTED EVALUATION REPORT THIRD CLASS PETTY OFFICER</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788B.PDF?ver=AQMChLm72UDPMUsHBeKWHw%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT THIRD CLASS PETTY OFFICER</a
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td>CG-3788C</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788C.PDF?ver=r6yDi6PTtFprtgWMfLYAkA%3d%3d" target="_blank">ENLISTED EVALUATION REPORT SECOND CLASS PETTY OFFICER</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788C.PDF?ver=r6yDi6PTtFprtgWMfLYAkA%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT SECOND CLASS PETTY OFFICER</a
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td>CG-3788D</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788D.PDF?ver=Z0BrHT08QFQe6XsLJgYlkw%3d%3d" target="_blank">ENLISTED EVALUATION REPORT FIRST CLASS PETTY OFFICER</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788D.PDF?ver=Z0BrHT08QFQe6XsLJgYlkw%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT FIRST CLASS PETTY OFFICER</a
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td>CG-3788E</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788E.pdf?ver=GdQRJdAcC-w6WzpYR8RVZA%3d%3d" target="_blank">ENLISTED EVALUATION REPORT CHIEF PETTY OFFICER</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788E.pdf?ver=GdQRJdAcC-w6WzpYR8RVZA%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT CHIEF PETTY OFFICER</a
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td>CG-3788F</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788F.PDF?ver=dhueDU3rtbTdGwCHINSEhg%3d%3d" target="_blank">ENLISTED EVALUATION REPORT SENIOR CHIEF PETTY OFFICER</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788F.PDF?ver=dhueDU3rtbTdGwCHINSEhg%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT SENIOR CHIEF PETTY OFFICER</a
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td>CG-3788G</td>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788G.PDF?ver=LS5CtH6v6yyObHNHpMHxXQ%3d%3d" target="_blank">ENLISTED EVALUATION REPORT MASTER CHIEF PETTY OFFICER</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_3788G.PDF?ver=LS5CtH6v6yyObHNHpMHxXQ%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ENLISTED EVALUATION REPORT MASTER CHIEF PETTY OFFICER</a
+                    >
+                  </td>
                 </tr>
               </table>
             </td>
             <td>06/25</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CLAIM%20FOR%20FINAL%20RETIRED%20PAY.pdf?ver=j-nmbEWU4hZxYjB4XFAtlw%3d%3d&timestamp=1652380296876" target="_blank">CG-3867</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CLAIM%20FOR%20FINAL%20RETIRED%20PAY.pdf?ver=j-nmbEWU4hZxYjB4XFAtlw%3d%3d&timestamp=1652380296876"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-3867</a
+              >
+            </td>
             <td>Claim for Final Retired Pay</td>
             <td>04/22</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Oct/23/2001830877/-1/-1/0/CG_4251.pdf" target="_blank">CG-4251</a></td>
-            <td>Military Temporary Duty (TDY) or Civilian Temporary Duty (TD) Travel Orders</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Oct/23/2001830877/-1/-1/0/CG_4251.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-4251</a
+              >
+            </td>
+            <td>
+              Military Temporary Duty (TDY) or Civilian Temporary Duty (TD)
+              Travel Orders
+            </td>
             <td>06/19</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/dd2656%202022.pdf?ver=O6xtCy0X7waxzOnOlgDeHA%3d%3d" target="_blank">DD-2656</a></td>
-            <td>Coast Guard, PHS, & NOAA Retired Pay Account Worksheet and Survivor Benefit Plan Election, to using 
-              the DD Form 2656, Data for Payment of Retired Personnel</td>
-              <td>08/22</td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/dd2656%202022.pdf?ver=O6xtCy0X7waxzOnOlgDeHA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >DD-2656</a
+              >
+            </td>
+            <td>
+              Coast Guard, PHS, & NOAA Retired Pay Account Worksheet and
+              Survivor Benefit Plan Election, to using the DD Form 2656, Data
+              for Payment of Retired Personnel
+            </td>
+            <td>08/22</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5102.PDF?ver=shKO0_CGkr2OmGWb-rqlCA%3d%3d" target="_blank">CG-5102</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5102.PDF?ver=shKO0_CGkr2OmGWb-rqlCA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5102</a
+              >
+            </td>
             <td>Officer Uniform Allowance Claim Worksheet</td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/15/2002956246/-1/-1/0/CG_5150.PDF" target="_blank">CG-5150</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/15/2002956246/-1/-1/0/CG_5150.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5150</a
+              >
+            </td>
             <td>Civilian Clothing Monetary Allowance Worksheet</td>
             <td>08/15</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2022/Mar/15/2002956247/-1/-1/0/CG_5155A.PDF" target="_blank">CG-5155A</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2022/Mar/15/2002956247/-1/-1/0/CG_5155A.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5155A</a
+              >
+            </td>
             <td>Enlisted Supplementary Clothing Allowance Worksheet</td>
             <td>11/15</td>
           </tr>
@@ -274,43 +665,115 @@
             <td>
               <table class="table2">
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305A.pdf?ver=Ua3EDkwgiolxunfppzrTMg%3d%3d" target="_blank">CG-5305A</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305A.pdf?ver=Ua3EDkwgiolxunfppzrTMg%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305A</a
+                    >
+                  </td>
                   <td>NAVAL ENGINEERING OFFICER (CG-NEN-10) BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305B.pdf?ver=lJmRy4hQnh5J-9OqySMLug%3d%3d" target="_blank">CG-5305B</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305B.pdf?ver=lJmRy4hQnh5J-9OqySMLug%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305B</a
+                    >
+                  </td>
                   <td>AVIATION OFFICER BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305C.pdf?ver=gSQQ9maDVOkULuEPzk_6tQ%3d%3d" target="_blank">CG-5305C</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305C.pdf?ver=gSQQ9maDVOkULuEPzk_6tQ%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305C</a
+                    >
+                  </td>
                   <td>CGCYBER ENLISTED BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305D.pdf?ver=HQwOlGopWl8I6349T04EOw%3d%3d" target="_blank">CG-5305D</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305D.pdf?ver=HQwOlGopWl8I6349T04EOw%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305D</a
+                    >
+                  </td>
                   <td>C4-IT CYBER OFFICER BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305E.pdf?ver=SZfXCoSDw9QLHc-SRJ-ciA%3d%3d" target="_blank">CG-5305E</a></td>
-                  <td>CYBER SECURITY RETENTION INCENTIVE REQUEST FORM (12/19)</td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305E.pdf?ver=SZfXCoSDw9QLHc-SRJ-ciA%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305E</a
+                    >
+                  </td>
+                  <td>
+                    CYBER SECURITY RETENTION INCENTIVE REQUEST FORM (12/19)
+                  </td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305F.pdf?ver=Kv5WiMnkUZKsTjFuKDO_ew%3d%3d" target="_blank">CG-5305F</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305F.pdf?ver=Kv5WiMnkUZKsTjFuKDO_ew%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305F</a
+                    >
+                  </td>
                   <td>AFLOAT OFFICER (XO-DEPT HEAD) BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305G.pdf?ver=vD7X1kKac3haXEBIX6PTXg%3d%3d" target="_blank">CG-5305G</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305G.pdf?ver=vD7X1kKac3haXEBIX6PTXg%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305G</a
+                    >
+                  </td>
                   <td>ENLISTMENT BONUS - BOATSWAIN MATE (CSTB BM-RAP)</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305H.pdf?ver=FrnzepDl8rW6l39ij_6EEQ%3d%3d" target="_blank">CG-5305H</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305H.pdf?ver=FrnzepDl8rW6l39ij_6EEQ%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305H</a
+                    >
+                  </td>
                   <td>CG JAG OFFICER BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305I.pdf?ver=zNFQRdsN4ofulzc9ZzNjlw%3d%3d" target="_blank">CG-5305I</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305I.pdf?ver=zNFQRdsN4ofulzc9ZzNjlw%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305I</a
+                    >
+                  </td>
                   <td>INVESTIGATING OFFICER (CG-INV) BONUS AGREEMENT</td>
                 </tr>
                 <tr>
-                  <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305J.pdf?ver=kI_ihG5oiDrvp4sKZVoEyA%3d%3d" target="_blank">CG-5305J</a></td>
+                  <td>
+                    <a
+                      href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5305J.pdf?ver=kI_ihG5oiDrvp4sKZVoEyA%3d%3d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >CG-5305J</a
+                    >
+                  </td>
                   <td>ENLISTED CRITICAL SKILLS RETENTION BONUS (CSRB)</td>
                 </tr>
               </table>
@@ -318,145 +781,365 @@
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5357.PDF?ver=N94rjhU1RU8a260pnuCpIA%3d%3d" target="_blank">CG-5357</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5357.PDF?ver=N94rjhU1RU8a260pnuCpIA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5357</a
+              >
+            </td>
             <td>Individual Development Plan</td>
             <td>12/20</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5357A.PDF?ver=bUGrv2MDhsjn1P3gQGRRkg%3d%3d" target="_blank">CG-5357A</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_5357A.PDF?ver=bUGrv2MDhsjn1P3gQGRRkg%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5357A</a
+              >
+            </td>
             <td>Executive Development Plan</td>
             <td>07/20</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2021/Feb/05/2002576602/-1/-1/0/CG_5370A.PDF" target="_blank">CG-5370A</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2021/Feb/05/2002576602/-1/-1/0/CG_5370A.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5370A</a
+              >
+            </td>
             <td>Sex Offender Policy Acknowledgement and Disclosure</td>
             <td>02/21</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2018/Jan/09/2001864125/-1/-1/0/CG_5489_1.PDF" target="_blank">CG-5489-1</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2018/Jan/09/2001864125/-1/-1/0/CG_5489_1.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5489-1</a
+              >
+            </td>
             <td>Remission Application</td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2018/Jan/09/2001864127/-1/-1/0/CG_5489_2.PDF" target="_blank">CG-5489-2</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2018/Jan/09/2001864127/-1/-1/0/CG_5489_2.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5489-2</a
+              >
+            </td>
             <td>Waiver Application</td>
             <td>09/14</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2018/Jan/09/2001864197/-1/-1/0/CG_5489B.pdf" target="_blank">CG-5489B</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2018/Jan/09/2001864197/-1/-1/0/CG_5489B.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-5489B</a
+              >
+            </td>
             <td>Financial Statement</td>
             <td>02/20</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_6049.PDF?ver=N3M0s2i4coSrXjIRdSUS_A%3d%3d" target="_blank">CG-6049</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_6049.PDF?ver=N3M0s2i4coSrXjIRdSUS_A%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-6049</a
+              >
+            </td>
             <td>Personal Fitness Plan</td>
             <td>03/16</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2021/May/21/2002702609/-1/-1/0/CG_7201.PDF" target="_blank">CG-7201</a></td>
-            <td>Application for Waiver of Collection of Erroneous Payments for Retirees and SBP Annuitants</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2021/May/21/2002702609/-1/-1/0/CG_7201.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7201</a
+              >
+            </td>
+            <td>
+              Application for Waiver of Collection of Erroneous Payments for
+              Retirees and SBP Annuitants
+            </td>
             <td>08/19</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Jul/17/2001778536/-1/-1/0/CG_7202.PDF" target="_blank">CG-7202</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Jul/17/2001778536/-1/-1/0/CG_7202.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7202</a
+              >
+            </td>
             <td>Waiver Application for Annuitant</td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Jul/17/2001778535/-1/-1/0/CG_7220.PDF" target="_blank">CG-7220</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Jul/17/2001778535/-1/-1/0/CG_7220.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220</a
+              >
+            </td>
             <td>Family Separation Housing (FSH) Worksheet</td>
             <td>01/16</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220A.pdf?ver=7muxchZ8igXmLlqoPO5CMQ%3d%3d" target="_blank">CG-7220A</a></td>
-            <td>Annet T: Enlistment Bonus Agreement (non-prior service with guaranteed A-School or prior service with qualifying skill</td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220A.pdf?ver=7muxchZ8igXmLlqoPO5CMQ%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220A</a
+              >
+            </td>
+            <td>
+              Annet T: Enlistment Bonus Agreement (non-prior service with
+              guaranteed A-School or prior service with qualifying skill
+            </td>
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220B.pdf?ver=dFSPlmWPWAaTCiC3bN_3QQ%3d%3d" target="_blank">CG-7220B</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220B.pdf?ver=dFSPlmWPWAaTCiC3bN_3QQ%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220B</a
+              >
+            </td>
             <td>Annex T.1: Enlistment Bonus Agreement (non-rate bonus)</td>
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220D.pdf?ver=Gq5Ucje2_UztHSZmYyUrrw%3d%3d" target="_blank">CG-7220D</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220D.pdf?ver=Gq5Ucje2_UztHSZmYyUrrw%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220D</a
+              >
+            </td>
             <td>Designated Career Field Bonus (DCFB) Agreement</td>
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220E.pdf?ver=cgqgb-I3zx15OwPvvSUPCA%3d%3d" target="_blank">CG-7220E</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220E.pdf?ver=cgqgb-I3zx15OwPvvSUPCA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220E</a
+              >
+            </td>
             <td>Critical Skills Retention Bonus (CSRB) Agreement</td>
             <td>11/28</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Jul/10/2001775787/-1/-1/0/CG_7220G.PDF" target="_blank">CG-7220G</a></td>
-            <td>Coast Guard Galley Temporary Closure Suspend Collection of CG Standard meal Rate (CGSM)</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Jul/10/2001775787/-1/-1/0/CG_7220G.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220G</a
+              >
+            </td>
+            <td>
+              Coast Guard Galley Temporary Closure Suspend Collection of CG
+              Standard meal Rate (CGSM)
+            </td>
             <td>01/16</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220H.PDF" target="_blank">CG-7220H</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220H.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220H</a
+              >
+            </td>
             <td>Family Stability Act BAH/Housing Worksheet</td>
             <td>02/20</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220I.pdf?ver=I3fmynprHDjUQkbItdb5Sg%3d%3d" target="_blank">CG-7220I</a></td>
-            <td>Annex T.3: Enlistment Bonus Agreement (college credit bonus)</td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220I.pdf?ver=I3fmynprHDjUQkbItdb5Sg%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220I</a
+              >
+            </td>
+            <td>
+              Annex T.3: Enlistment Bonus Agreement (college credit bonus)
+            </td>
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220J.pdf?ver=Bh1BAFjfIy5tEgJs8svNag%3d%3d" target="_blank">CG-7220J</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220J.pdf?ver=Bh1BAFjfIy5tEgJs8svNag%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220J</a
+              >
+            </td>
             <td>Annex T.4: Enlistment Bonus Agreement (quick ship bonus)</td>
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220K.pdf?ver=N5U1EaWZt17tmvII2elE3Q%3d%3d" target="_blank">CG-7220K</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7220K.pdf?ver=N5U1EaWZt17tmvII2elE3Q%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7220K</a
+              >
+            </td>
             <td>Annex T.5: Change in Rating Enlistment Bonus</td>
             <td>10/24</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Jul/10/2001775786/-1/-1/0/CG_7221.PDF" target="_blank">CG-7221</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Jul/10/2001775786/-1/-1/0/CG_7221.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7221</a
+              >
+            </td>
             <td>Retired Allotment Authorization Form</td>
             <td>07/10</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Jul/10/2001775785/-1/-1/0/CG_7270.PDF" target="_blank">CG-7270</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Jul/10/2001775785/-1/-1/0/CG_7270.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7270</a
+              >
+            </td>
             <td>COLA - Unique Expenses Reimbursement Worksheet</td>
             <td>02/15</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2019/May/03/2002127475/-1/-1/0/CG_7302.PDF" target="_blank">CG-7302</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2019/May/03/2002127475/-1/-1/0/CG_7302.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7302</a
+              >
+            </td>
             <td>EFT / ACH Member Payment Enrollment Form</td>
             <td>03/19</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7421H.pdf?ver=ic1HISyeWKiQzBhrOVl1vA%3d%3d" target="_blank">CG-7421H</a></td>
-            <td>IPERMS User Role Request <strong>(Must download form to enable)</strong></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7421H.pdf?ver=ic1HISyeWKiQzBhrOVl1vA%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7421H</a
+              >
+            </td>
+            <td>
+              IPERMS User Role Request
+              <strong>(Must download form to enable)</strong>
+            </td>
             <td>10/22</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Dec/21/2001860344/-1/-1/0/CG_7430A.PDF" target="_blank">CG-7430A</a></td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Dec/21/2001860344/-1/-1/0/CG_7430A.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7430A</a
+              >
+            </td>
             <td>Continuation Pay Election</td>
             <td>11/17</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7431.pdf?ver=oSVGagCFUXEGHjW5B97ZmQ%3d%3d" target="_blank">CG-7431</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7431.pdf?ver=oSVGagCFUXEGHjW5B97ZmQ%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7431</a
+              >
+            </td>
             <td>Basic Needs Allowance Worksheet</td>
             <td>07/25</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7431A.pdf?ver=thZgzVELJb6vwtKJJLsxhQ%3d%3d" target="_blank">CG-7431A</a></td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_7431A.pdf?ver=thZgzVELJb6vwtKJJLsxhQ%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7431A</a
+              >
+            </td>
             <td>Basic Needs Allowance Eligibility Screening Worksheet</td>
             <td>07/25</td>
           </tr>
           <tr>
-            <td><a href="https://media.defense.gov/2017/Jun/19/2001764973/-1/-1/0/CG_7543.PDF" target="_blank">CG-7543</a></td>
-            <td>Statement of Financial Status Submitted for Consideration in Connection with indebtedness to the United States</td>
+            <td>
+              <a
+                href="https://media.defense.gov/2017/Jun/19/2001764973/-1/-1/0/CG_7543.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-7543</a
+              >
+            </td>
+            <td>
+              Statement of Financial Status Submitted for Consideration in
+              Connection with indebtedness to the United States
+            </td>
             <td>02/10</td>
           </tr>
           <tr>
-            <td><a href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_11221.pdf?ver=V8SknunjhIQPIghNH_gMQQ%3d%3d" target="_blank">CG-11221</a></td>
-            <td>Reserve Component Survivor Benefit Plan (RCSBP) Option - Election Certificate</td>
+            <td>
+              <a
+                href="https://www.dcms.uscg.mil/Portals/10/CG-1/PPC/FORMS/CG_11221.pdf?ver=V8SknunjhIQPIghNH_gMQQ%3d%3d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CG-11221</a
+              >
+            </td>
+            <td>
+              Reserve Component Survivor Benefit Plan (RCSBP) Option - Election
+              Certificate
+            </td>
             <td>12/22</td>
           </tr>
+        </tbody>
       </table>
-    </body>
-  </html>
+    </div>
+
+    <script src="Forms/forms.js" defer></script>
+  </body>
+</html>

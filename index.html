@@ -1,309 +1,870 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Yeoman One Source</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="index.js" defer></script>
-    </head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Yeoman One Source</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="administrationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Administration
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="administrationDropdown">
-                <li><a class="dropdown-item" href="#">"A" School Request for a Member</a></li>
-                <li><a class="dropdown-item" href="#">Administrative Discharge Recommendation</a></li>
-                <li><a class="dropdown-item" href="#">Advancement Certificate</a></li>
-                <li><a class="dropdown-item" href="#">Advancement Transaction in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">Assignment Request (Unilateral and Mutual)</a></li>
-                <li><a class="dropdown-item" href="#">Board of Correction of Military Record (BCMR) and a Personnel Records Review Board (PRRB) Application</a></li>
-                <li><a class="dropdown-item" href="#">Compliance with Weight and Body Fat Standards</a></li>
-                <li><a class="dropdown-item" href="#">Competency Data, Honor and Awards,<br>License and Certificates Data,<br>and Training Data</a></li>
-                <li><a class="dropdown-item" href="#">Coast Guard Directives (Instructions, Notices and Unit SOPs)</a></li>
-                <li><a class="dropdown-item" href="#">Designation of Beneficiaries (CG-2020D),<br> 
-                Family Service members' Group Life Insurance (FSGLI),<br> 
-                and Servicemembers' Group Life Insurance (SGLI)</a></li>
-                <li><a class="dropdown-item" href="#">Develop SPO/P&A Training Plan</a></li>
-                <li><a class="dropdown-item" href="#">Disciplinary Action (NJP, Courts Martial)</a></li>
-                <li><a class="dropdown-item" href="#">Disciplinary Actions Appeals (Courts-Martial Investigation Reports and NJP Appeals)</a></li>
-                <li><a class="dropdown-item" href="#">Discharge or a request for Temporary Separation (TEMPSEP) in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">Enlisted Evaluations (Reports/System)</a></li>
-                <li><a class="dropdown-item" href="#">Execution of SPO/P&A Training Plan</a></li>
-                <li><a class="dropdown-item" href="#">Extension or Re-extension in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">Format a Memorandum</a></li>
-                <li><a class="dropdown-item" href="#">Government Travel Charge Card (GTCC) Application</a></li>
-                <li><a class="dropdown-item" href="#">High Year Tenure (HYT)</a></li>
-                <li><a class="dropdown-item" href="#">Humanitarian Assignment (HUMS) Request</a></li>
-                <li><a class="dropdown-item" href="#">Identification Cards</a></li>
-                <li><a class="dropdown-item" href="#">Insurance Claim (FSGLI, SGLI, and TSGLI)</a></li>
-                <li><a class="dropdown-item" href="#">Leave and Absences</a></li>
-                <li><a class="dropdown-item" href="#">Leave Carry-Over Request</a></li>
-                <li><a class="dropdown-item" href="#">Modifying Emergency Contact Data Information</a></li>
-                <li><a class="dropdown-item" href="#">Non-Judicial Punishment (NJP) or Courts Martial in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">OCONUS Early Return of Dependents</a></li>
-                <li><a class="dropdown-item" href="#">Overseas Entry Approval Request Package (Departing Unit)</a></li>
-                <li><a class="dropdown-item" href="#">Policy and Procedures for Separation (TEMPSEP, Discharge, RELAD, Retirement)</a></li>
-                <li><a class="dropdown-item" href="#">Prepare an Award for Presentation</a></li>
-                <li><a class="dropdown-item" href="#">Qualification to Possess Firearms (DD-2760)</a></li>
-                <li><a class="dropdown-item" href="#">Release from Active Duty (RELAD) in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">Remove Member from Advancement Eligibility List</a></li>
-                <li><a class="dropdown-item" href="#">Request of an Official Military Personnel File (OMPF)</a></li>
-                <li><a class="dropdown-item" href="#">Retirement in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">Review a Members iPERMS Record</a></li>
-                <li><a class="dropdown-item" href="#">Travel Claim (PCS/TDY)</a></li>
-                <li><a class="dropdown-item" href="#">Unit Correspondence Files</a></li>
-                <li><a class="dropdown-item" href="#">Unit Reports (Travel Charge Card, Member Weigh-in Report, EER, Unit Roster</a></li>
-                <li><a class="dropdown-item" href="#">Units Compliance with Weight Program</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yeoman One Source</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Yeoman One Source</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="administrationDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Administration
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="administrationDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >"A" School Request for a Member</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Administrative Discharge Recommendation</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Advancement Certificate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Advancement Transaction in Direct Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Assignment Request (Unilateral and Mutual)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Board of Correction of Military Record (BCMR) and a
+                    Personnel Records Review Board (PRRB) Application</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Compliance with Weight and Body Fat Standards</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Competency Data, Honor and Awards,<br />License and
+                    Certificates Data,<br />and Training Data</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Coast Guard Directives (Instructions, Notices and Unit
+                    SOPs)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Designation of Beneficiaries (CG-2020D),<br />
+                    Family Service members' Group Life Insurance (FSGLI),<br />
+                    and Servicemembers' Group Life Insurance (SGLI)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Develop SPO/P&A Training Plan</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Disciplinary Action (NJP, Courts Martial)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Disciplinary Actions Appeals (Courts-Martial Investigation
+                    Reports and NJP Appeals)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Discharge or a request for Temporary Separation (TEMPSEP)
+                    in Direct Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Enlisted Evaluations (Reports/System)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Execution of SPO/P&A Training Plan</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Extension or Re-extension in Direct Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Format a Memorandum</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Government Travel Charge Card (GTCC) Application</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">High Year Tenure (HYT)</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Humanitarian Assignment (HUMS) Request</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Identification Cards</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Insurance Claim (FSGLI, SGLI, and TSGLI)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Leave and Absences</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Leave Carry-Over Request</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Modifying Emergency Contact Data Information</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Non-Judicial Punishment (NJP) or Courts Martial in Direct
+                    Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >OCONUS Early Return of Dependents</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Overseas Entry Approval Request Package (Departing Unit)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Policy and Procedures for Separation (TEMPSEP, Discharge,
+                    RELAD, Retirement)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Prepare an Award for Presentation</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Qualification to Possess Firearms (DD-2760)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Release from Active Duty (RELAD) in Direct Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Remove Member from Advancement Eligibility List</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Request of an Official Military Personnel File (OMPF)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Retirement in Direct Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Review a Members iPERMS Record</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Travel Claim (PCS/TDY)</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Unit Correspondence Files</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Unit Reports (Travel Charge Card, Member Weigh-in Report,
+                    EER, Unit Roster</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Units Compliance with Weight Program</a
+                  >
+                </li>
                 <li><a class="dropdown-item" href="#">Weight Probation</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="payPersonnelDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Pay and Personnel
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="payPersonnelDropdown">
-                <li><a class="dropdown-item" href="#">Accession (hire / rehire)</a></li>
-                <li><a class="dropdown-item" href="#">Advance Payments (BAH, OHA, Basic Pay)</a></li>
-                <li><a class="dropdown-item" href="#">Advancement Eligibility</a></li>
-                <li><a class="dropdown-item" href="#">Annuities and Premiums for Survivor Benefit Plans (SBP and RC-SBP)</a></li>
-                <li><a class="dropdown-item" href="#">Audit Payroll (Verification Report and PayCalcs)</a></li>
-                <li><a class="dropdown-item" href="#">BAH / Dependency Eligibility</a></li>
-                <li><a class="dropdown-item" href="#">Basic Allowance for Housing Entitlements</a></li>
-                <li><a class="dropdown-item" href="#">Basic Needs Allowance (BNA)</a></li>
-                <li><a class="dropdown-item" href="#">Career Sea Pay (CSP), Career Sea Pay Premium (CSPP), Incentive and Special Pay Transactions</a></li>
-                <li><a class="dropdown-item" href="#">Career Sea Pay and Career Sea Pay Premium</a></li>
-                <li><a class="dropdown-item" href="#">Change in Dependency Status in DA</a></li>
-                <li><a class="dropdown-item" href="#">Change in Rating Process</a></li>
-                <li><a class="dropdown-item" href="#">Changing Direct Deposit Information</a></li>
-                <li><a class="dropdown-item" href="#">Command Email Traffic</a></li>
-                <li><a class="dropdown-item" href="#">Cost of Living Allowances (COLA) for CONUS and OCONUS</a></li>
-                <li><a class="dropdown-item" href="#">Critical Skills Retention Bonus (CSRB)</a></li>
-                <li><a class="dropdown-item" href="#">Designation of Beneficiaries (CG-2020D)</a></li>
-                <li><a class="dropdown-item" href="#">Family Separation Allowances</a></li>
-                <li><a class="dropdown-item" href="#">Family Separation Housing (FSH) Allowance</a></li>
-                <li><a class="dropdown-item" href="#">Good Conduct Award Eligibility</a></li>
-                <li><a class="dropdown-item" href="#">Housing Allowance Protection Worksheet (CG-2025A)</a></li>
-                <li><a class="dropdown-item" href="#">Incentive Pay Entitlements (AvIP, AvB, DIFDEN, DIFOPS)</a></li>
-                <li><a class="dropdown-item" href="#">Indebtedness Request (Remission/Waiver)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="payPersonnelDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pay and Personnel
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="payPersonnelDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Accession (hire / rehire)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Advance Payments (BAH, OHA, Basic Pay)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Advancement Eligibility</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Annuities and Premiums for Survivor Benefit Plans (SBP and
+                    RC-SBP)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Audit Payroll (Verification Report and PayCalcs)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >BAH / Dependency Eligibility</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Basic Allowance for Housing Entitlements</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Basic Needs Allowance (BNA)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Career Sea Pay (CSP), Career Sea Pay Premium (CSPP),
+                    Incentive and Special Pay Transactions</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Career Sea Pay and Career Sea Pay Premium</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Change in Dependency Status in DA</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Change in Rating Process</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Changing Direct Deposit Information</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Command Email Traffic</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Cost of Living Allowances (COLA) for CONUS and OCONUS</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Critical Skills Retention Bonus (CSRB)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Designation of Beneficiaries (CG-2020D)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Family Separation Allowances</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Family Separation Housing (FSH) Allowance</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Good Conduct Award Eligibility</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Housing Allowance Protection Worksheet (CG-2025A)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Incentive Pay Entitlements (AvIP, AvB, DIFDEN, DIFOPS)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Indebtedness Request (Remission/Waiver)</a
+                  >
+                </li>
                 <li><a class="dropdown-item" href="#">Life Insurance</a></li>
-                <li><a class="dropdown-item" href="#">Maintaining Allotments</a></li>
-                <li><a class="dropdown-item" href="#">Obtaining an Official Passport or Passport Card</a></li>
-                <li><a class="dropdown-item" href="#">Pay and Allowance Variations</a></li>
-                <li><a class="dropdown-item" href="#">Payroll (Verification Report and Pay Calculation Results)</a></li>
-                <li><a class="dropdown-item" href="#">Prepare a Business Letter</a></li>
-                <li><a class="dropdown-item" href="#">Prepare an Endorsement</a></li>
-                <li><a class="dropdown-item" href="#">Record of Professional Development (CG-4082)</a></li>
-                <li><a class="dropdown-item" href="#">Reenlistment, Extension and Reextension of Enlistment</a></li>
-                <li><a class="dropdown-item" href="#">Request a Special Payment</a></li>
-                <li><a class="dropdown-item" href="#">Selective Reenlistment Bonus (SRB)</a></li>
-                <li><a class="dropdown-item" href="#">Special Pay Entitlements (FLPP, HF, IDP, RSPLTY Pay, SDP)</a></li>
-                <li><a class="dropdown-item" href="#">Statement of Creditable Service, Transcript of Sea Service and Statement of Creditable Sea Service</a></li>
-                <li><a class="dropdown-item" href="#">Subsistence Allowance</a></li>
-                <li><a class="dropdown-item" href="#">Subsistence Allowances (SMR, BAS, BAS II)</a></li>
-                <li><a class="dropdown-item" href="#">Types of Housing Allowances</a></li>
-                <li><a class="dropdown-item" href="#">Uniform Allowance (Clothing Allowance)</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="reservesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Reserves
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="reservesDropdown">
-                <li><a class="dropdown-item" href="#">Change in Reserve Component Category (RCC) Form (IRR, ISL, ASL)</a></li>
-                <li><a class="dropdown-item" href="#">Correcting Discrepancies on a Reserve Point Statement</a></li>
-                <li><a class="dropdown-item" href="#">Pay and Allowances for Active Duty for Operational Support (ADOS) Orders (Long/Short Term)</a></li>
-                <li><a class="dropdown-item" href="#">Pay and Allowances for Funeral Honor Duty (FHD), IDT Drills and Readiness Management Period (RMP)</a></li>
-                <li><a class="dropdown-item" href="#">Requesting RET-1/RET-2 status</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Maintaining Allotments</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Obtaining an Official Passport or Passport Card</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Pay and Allowance Variations</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Payroll (Verification Report and Pay Calculation
+                    Results)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Prepare a Business Letter</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Prepare an Endorsement</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Record of Professional Development (CG-4082)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Reenlistment, Extension and Reextension of Enlistment</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Request a Special Payment</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Selective Reenlistment Bonus (SRB)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Special Pay Entitlements (FLPP, HF, IDP, RSPLTY Pay,
+                    SDP)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Statement of Creditable Service, Transcript of Sea Service
+                    and Statement of Creditable Sea Service</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Subsistence Allowance</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Subsistence Allowances (SMR, BAS, BAS II)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Types of Housing Allowances</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Uniform Allowance (Clothing Allowance)</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="reservesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Reserves
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="reservesDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Change in Reserve Component Category (RCC) Form (IRR, ISL,
+                    ASL)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Correcting Discrepancies on a Reserve Point Statement</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Pay and Allowances for Active Duty for Operational Support
+                    (ADOS) Orders (Long/Short Term)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Pay and Allowances for Funeral Honor Duty (FHD), IDT Drills
+                    and Readiness Management Period (RMP)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Requesting RET-1/RET-2 status</a
+                  >
+                </li>
                 <li><a class="dropdown-item" href="#">Reserve Bonuses</a></li>
-                <li><a class="dropdown-item" href="#">Reserve Good Conduct Eligibility</a></li>
-                <li><a class="dropdown-item" href="#">Reserve Orders in DA (DEMOB, MOB, ADT-AT/OTD, EAD, ADOS, IADT)</a></li>
-                <li><a class="dropdown-item" href="#">Reserve Participation Standards</a></li>
-                <li><a class="dropdown-item" href="#">Reserve Readiness Status</a></li>
-                <li><a class="dropdown-item" href="#">Travel and Transportation Entitlements for a Demobilization</a></li>
-                <li><a class="dropdown-item" href="#">Travel and Transportation Entitlements for a Mobilization</a></li>
-                <li><a class="dropdown-item" href="#">Travel and Transportation Entitlements for Reserve Orders for Extended Active Duty (EAD),
-                Active Duty for Training (ADT), Initial Active Duty for Training (IADT), Log/Short Term ADOS, and RMP</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="travelTransportationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Travel and Transportation
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="travelTransportationDropdown">
-                <li><a class="dropdown-item" href="#">CONUS Permanent Change of Station (PCS) Entitlements</a></li>
-                <li><a class="dropdown-item" href="#">Consecutive Overseas Tour (COT) Entitlements</a></li>
-                <li><a class="dropdown-item" href="#">Dependent Evacuation Orders</a></li>
-                <li><a class="dropdown-item" href="#">Dependent Travel to Designated Place (PCS)</a></li>
-                <li><a class="dropdown-item" href="#">Dislocation Allowance (DLA)</a></li>
-                <li><a class="dropdown-item" href="#">Duty Assignment Eligibility</a></li>
-                <li><a class="dropdown-item" href="#">Emergency Leave Travel Request</a></li>
-                <li><a class="dropdown-item" href="#">Evacuation Travel Voucher</a></li>
-                <li><a class="dropdown-item" href="#">Mixed Mode Travel Entitlements, Temporary Lodging Expense (TLE) and Temporary Lodging Allowance (TLA)</a></li>
-                <li><a class="dropdown-item" href="#">Monetary Allowance in Lieu of Transportation (MALT) plus Per Diem Entitlements</a></li>
-                <li><a class="dropdown-item" href="#">OCONUS Permanent Change of Station (PCS) Entitlements</a></li>
-                <li><a class="dropdown-item" href="#">PCS Travel Advance in Travel Management Software</a></li>
-                <li><a class="dropdown-item" href="#">PCS Travel Advance iin Travel Management Software</a></li>
-                <li><a class="dropdown-item" href="#">Permanent Change of Station (PCS)</a></li>
-                <li><a class="dropdown-item" href="#">Permanent Change of Station (PCS) Reporting Event in Direct Access</a></li>
-                <li><a class="dropdown-item" href="#">Permanent Change of Statioin (PCS)</a></li>
-                <li><a class="dropdown-item" href="#">Permanent Change of Station / Temporary Duty (PCS/TEMDU) Travel Entitlements to Class "A" Schools</a></li>
-                <li><a class="dropdown-item" href="#">Temporary Duty (TDY)</a></li>
-                <li><a class="dropdown-item" href="#">Temporary Duty (TDY) Travel Entitlements</a></li>
-                <li><a class="dropdown-item" href="#">Temporary Lodging Allowance (TLA)</a></li>
-                <li><a class="dropdown-item" href="#">Temporary Lodging Expense (TLE)</a></li>
-                <li><a class="dropdown-item" href="#">Transportation Entitlements (HHG's, SIT, NTS, UB, Progear, PPM, POV Shipment)</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Reserve Good Conduct Eligibility</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Reserve Orders in DA (DEMOB, MOB, ADT-AT/OTD, EAD, ADOS,
+                    IADT)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Reserve Participation Standards</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Reserve Readiness Status</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Travel and Transportation Entitlements for a
+                    Demobilization</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Travel and Transportation Entitlements for a
+                    Mobilization</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Travel and Transportation Entitlements for Reserve Orders
+                    for Extended Active Duty (EAD), Active Duty for Training
+                    (ADT), Initial Active Duty for Training (IADT), Log/Short
+                    Term ADOS, and RMP</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="travelTransportationDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Travel and Transportation
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="travelTransportationDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >CONUS Permanent Change of Station (PCS) Entitlements</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Consecutive Overseas Tour (COT) Entitlements</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Dependent Evacuation Orders</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Dependent Travel to Designated Place (PCS)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Dislocation Allowance (DLA)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Duty Assignment Eligibility</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Emergency Leave Travel Request</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Evacuation Travel Voucher</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Mixed Mode Travel Entitlements, Temporary Lodging Expense
+                    (TLE) and Temporary Lodging Allowance (TLA)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Monetary Allowance in Lieu of Transportation (MALT) plus
+                    Per Diem Entitlements</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >OCONUS Permanent Change of Station (PCS) Entitlements</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >PCS Travel Advance in Travel Management Software</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >PCS Travel Advance iin Travel Management Software</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Permanent Change of Station (PCS)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Permanent Change of Station (PCS) Reporting Event in Direct
+                    Access</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Permanent Change of Statioin (PCS)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Permanent Change of Station / Temporary Duty (PCS/TEMDU)
+                    Travel Entitlements to Class "A" Schools</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Temporary Duty (TDY)</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Temporary Duty (TDY) Travel Entitlements</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Temporary Lodging Allowance (TLA)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Temporary Lodging Expense (TLE)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Transportation Entitlements (HHG's, SIT, NTS, UB, Progear,
+                    PPM, POV Shipment)</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+      <label class="shortcuts"><h5>Your Shortcuts</h5></label>
+      <a href="https://hcm.direct-access.uscg.mil/" target="_blank"
+        ><i class="fas fa-link"></i> Direct Access</a
+      >
+      <a href="https://e2.gov.cwtsatotravel.com/" target="_blank"
+        ><i class="fas fa-plane"></i> ETS</a
+      >
+      <a href="https://iperms.mymilrecord.uscg.mil/login" target="_blank"
+        ><i class="fas fa-file-alt"></i> iPERMS</a
+      >
+      <a
+        href="https://expense.uscg.mypdt.mil/ReloLogin.aspx?ReturnUrl=%2f"
+        target="_blank"
+        ><i class="fas fa-map-marker-alt"></i> MLINQS</a
+      >
+      <a
+        href="https://dps.move.mil/cust/standard/user/home.xhtml"
+        target="_blank"
+        ><i class="fas fa-truck"></i> DPS</a
+      >
+      <hr style="border: 1px solid #000; margin: 20px 0" />
+      <label class="ynlinks"><h5>Yeoman Links</h5></label>
+      <div class="links">
+        <a href="../yeoman-one-source/Calculators/calculators.html"
+          >Calculators</a
+        >
+        <a href="#">Certificates</a>
+        <a href="#">CG-3307</a>
+        <a href="#">Computations</a>
+        <a href="#">DA Guides</a>
+        <a href="/Forms/forms.html">Forms and Worksheets</a>
+        <a href="#">Known Issues</a>
+        <a href="#">Pay Research</a>
+        <a href="#">PPM</a>
+        <a href="#">Reference Library</a>
+        <a href="#">System Availablilty</a>
       </div>
     </div>
-  </nav>
 
-  <!-- Sidebar -->
-   
-  <div class="sidebar">
-    <label class="shortcuts"><h5>Your Shortcuts</h5></label>
-    <a href="https://hcm.direct-access.uscg.mil/" target="_blank"><i class="fas fa-link"></i> Direct Access</a>
-    <a href="https://e2.gov.cwtsatotravel.com/" target="_blank"><i class="fas fa-plane"></i> ETS</a>
-    <a href="https://iperms.mymilrecord.uscg.mil/login" target="_blank"><i class="fas fa-file-alt"></i> iPERMS</a>
-    <a href="https://expense.uscg.mypdt.mil/ReloLogin.aspx?ReturnUrl=%2f" target="_blank"><i class="fas fa-map-marker-alt"></i> MLINQS</a>
-    <a href="https://dps.move.mil/cust/standard/user/home.xhtml" target="_blank"><i class="fas fa-truck"></i> DPS</a>
-    <hr style="border: 1px solid #000; margin: 20px 0;">
-    <label class="ynlinks"><h5>Yeoman Links</h5></label>
-    <div class="links">
-      <a href="../yeoman-one-source/Calculators/calculators.html">Calculators</a>
-      <a href="#">Certificates</a>
-      <a href="#">CG-3307</a>
-      <a href="#">Computations</a>
-      <a href="#">DA Guides</a>
-      <a href="../yeoman-one-source/Forms/forms.html">Forms and Worksheets</a>
-      <a href="#">Known Issues</a>
-      <a href="#">Pay Research</a>
-      <a href="#">PPM</a>
-      <a href="#">Reference Library</a>
-      <a href="#">System Availablilty</a>
-    </div>
-  </div>
-
-  <!-- Right Sidebar (calendar removed) -->
-  <div class="sidebar2">
-    <section class="sectionone">
-      <div class="sidebar-date">
-      <span id="currentDate" role="note" aria-live="polite"></span>
-      </div>
-      <div id="clock" role="timer" aria-live="off" aria-atomic="true" class="sidebar-clock"></div>
-    </section>
-    <!--<section class="sectiontwo">
+    <!-- Right Sidebar (calendar removed) -->
+    <div class="sidebar2">
+      <section class="sectionone">
+        <div class="sidebar-date">
+          <span id="currentDate" role="note" aria-live="polite"></span>
+        </div>
+        <div
+          id="clock"
+          role="timer"
+          aria-live="off"
+          aria-atomic="true"
+          class="sidebar-clock"
+        ></div>
+      </section>
+      <!--<section class="sectiontwo">
       <h6><strong>Upcoming Paycut Dates</strong></h6>
       <ul>
         <li>Date</li>
         <li>Date</li>
       </ul>
     </section>-->
-    <section class="sectionthree">
-      <h6><strong>PPC Mailing Address</strong></h6>
-      <p class="ppcaddress"><strong>Commanding Officer (RAS)</strong><br>
-        U.S. Coast Guard<br>
-        Pay and Personnel Center<br>
-        444 SE Quincy St.<br>
-        Topeka, KS 66683-3591</p>
-        <hr>
-      <h6><strong>Customer Support Telephone</strong></h6>
-      <p class="ppccustserv"><strong>PPC Customer Service</strong><br>
-         <strong>Phone:</strong> (866) 772-8724<br>
-         7:30AM to 4:00PM Central Time, Monday through Friday</p>
-      <p class="c5icustserv"><strong>C5I Service Center Product Support Service Desk</strong><br>
-         <strong>Phone:</strong> (800) 821-7081<br>
-         6:30AM to 6:30 PM Eastern Time, Monday through Friday</p>
-      <hr>
-      <h6><strong>Email</strong></h6>
-      <p class="ppcemail"><strong>PPC Customer Service:</strong> <a href="mailto:PPC-DG-CustomerCare@uscg.mil">PPC-DG-CustomerCare@uscg.mil</a> </p>
-      <p class="C5Iemail"><strong>C5I Service Center:</strong> <a href="mailto:SMB-USCG-KerWV-ProductSupportSD@uscg.mil">SMB-USCG-KerWV-ProductSupportSD@uscg.mil</a></p>
-    </section>
-  </div>
+      <section class="sectionthree">
+        <h6><strong>PPC Mailing Address</strong></h6>
+        <p class="ppcaddress">
+          <strong>Commanding Officer (RAS)</strong><br />
+          U.S. Coast Guard<br />
+          Pay and Personnel Center<br />
+          444 SE Quincy St.<br />
+          Topeka, KS 66683-3591
+        </p>
+        <hr />
+        <h6><strong>Customer Support Telephone</strong></h6>
+        <p class="ppccustserv">
+          <strong>PPC Customer Service</strong><br />
+          <strong>Phone:</strong> (866) 772-8724<br />
+          7:30AM to 4:00PM Central Time, Monday through Friday
+        </p>
+        <p class="c5icustserv">
+          <strong>C5I Service Center Product Support Service Desk</strong><br />
+          <strong>Phone:</strong> (800) 821-7081<br />
+          6:30AM to 6:30 PM Eastern Time, Monday through Friday
+        </p>
+        <hr />
+        <h6><strong>Email</strong></h6>
+        <p class="ppcemail">
+          <strong>PPC Customer Service:</strong>
+          <a href="mailto:PPC-DG-CustomerCare@uscg.mil"
+            >PPC-DG-CustomerCare@uscg.mil</a
+          >
+        </p>
+        <p class="C5Iemail">
+          <strong>C5I Service Center:</strong>
+          <a href="mailto:SMB-USCG-KerWV-ProductSupportSD@uscg.mil"
+            >SMB-USCG-KerWV-ProductSupportSD@uscg.mil</a
+          >
+        </p>
+      </section>
+    </div>
 
-  <!-- Page content -->
-<div class="main-content">
-  <div class="content">
-    <h1>Welcome to Yeoman One Source</h1>
-    <p>The central hub for all your administrative, personnel, and travel needs.</p>
-    
-    <!-- Section 1: Introduction -->
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <p>Welcome to Yeoman One Source — your centralized hub for all things Coast Guard Yeoman. Designed with your mission in mind, 
-        this all-in-one platform brings together essential resources and guidance on Administration, Pay and Personnel, Reserves, and Travel 
-        and Transportation. Whether you're a seasoned Yeoman or just starting out, Yeoman One Source provides the information, tools, and support 
-        you need to stay informed, stay organized, and succeed in every aspect of your duties.</p>
-    </section>
+    <!-- Page content -->
+    <div class="main-content">
+      <div class="content">
+        <h1>Welcome to Yeoman One Source</h1>
+        <p>
+          The central hub for all your administrative, personnel, and travel
+          needs.
+        </p>
 
-    <!-- Section 2: Key Features -->
-    <section id="key-features">
-      <h2>Key Features</h2>
-      <ul>
-        <li>Access to administrative forms and worksheets</li>
-        <li>Manage payroll, benefits, and leave</li>
-        <li>Reserve-specific resources</li>
-        <li>Travel and transportation tools</li>
-      </ul>
-    </section>
+        <!-- Section 1: Introduction -->
+        <section id="introduction">
+          <h2>Introduction</h2>
+          <p>
+            Welcome to Yeoman One Source — your centralized hub for all things
+            Coast Guard Yeoman. Designed with your mission in mind, this
+            all-in-one platform brings together essential resources and guidance
+            on Administration, Pay and Personnel, Reserves, and Travel and
+            Transportation. Whether you're a seasoned Yeoman or just starting
+            out, Yeoman One Source provides the information, tools, and support
+            you need to stay informed, stay organized, and succeed in every
+            aspect of your duties.
+          </p>
+        </section>
 
-    <!-- Section 3: Getting Started -->
-    <section id="getting-started">
-      <h2>Getting Started</h2>
-      <p>Provide step-by-step instructions or links to help users get started with the platform.</p>
-    </section>
+        <!-- Section 2: Key Features -->
+        <section id="key-features">
+          <h2>Key Features</h2>
+          <ul>
+            <li>Access to administrative forms and worksheets</li>
+            <li>Manage payroll, benefits, and leave</li>
+            <li>Reserve-specific resources</li>
+            <li>Travel and transportation tools</li>
+          </ul>
+        </section>
 
-    <!-- Section 4: Support -->
-    <section id="support">
-      <h2>Support</h2>
-      <p>If you need assistance, please visit our <a href="#support-page">Support Page</a> or contact us directly.</p>
-    </section>
-  </div>
-</div>
-</body>
-<footer class="bg-dark text-white text-center py-3 mt-auto">
-  <div class="container">
-    <p>Created by Christopher E. White</p>
-  </div>
-</footer>
+        <!-- Section 3: Getting Started -->
+        <section id="getting-started">
+          <h2>Getting Started</h2>
+          <p>
+            Provide step-by-step instructions or links to help users get started
+            with the platform.
+          </p>
+        </section>
 
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  .main-content {
-    flex: 1;
-  }
-  footer {
-    height: 56px; /* Matches the default height of the Bootstrap navbar */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-</style>
-<script src="home.js"></script>
+        <!-- Section 4: Support -->
+        <section id="support">
+          <h2>Support</h2>
+          <p>
+            If you need assistance, please visit our
+            <a href="#support-page">Support Page</a> or contact us directly.
+          </p>
+        </section>
+      </div>
+    </div>
+  </body>
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+      <p>Created by Christopher E. White</p>
+    </div>
+  </footer>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    .main-content {
+      flex: 1;
+    }
+    footer {
+      height: 56px; /* Matches the default height of the Bootstrap navbar */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script src="home.js"></script>
 </html>

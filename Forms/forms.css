@@ -1,39 +1,535 @@
-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
+/* ========================================
+   Forms and Worksheets - Enhanced CSS
+   ======================================== */
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-thead {
-    background-color: #004080;
-    color: white;
-    border: 1px solid black;
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+  padding: 20px;
 }
 
-td {
-    border: 1px solid black;
-    padding: 3px;
-    font-size: 13px;
-}
-
-/* Center the 'Revised (MM/YY)' column (3rd column) in the main forms table
-   Excludes nested tables (table1, table2) so nested table layouts are unaffected. */
-table:not(.table1):not(.table2) th:nth-child(3),
-table:not(.table1):not(.table2) td:nth-child(3) {
-    text-align: center;
-}
-
+/* Main Header */
 h1 {
-    text-align: center;
-    border: 4px solid black;
-    padding: 10px;
-    background-color: #004080;
-    color: white;
+  text-align: center;
+  border: 4px solid #004080;
+  padding: 15px 20px;
+  background-color: #004080;
+  color: white;
+  margin: 0 auto 20px;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Controls Section */
+.controls {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls label {
+  font-weight: 600;
+  color: #004080;
+}
+
+.controls select,
+.controls input {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.controls select:focus,
+.controls input:focus {
+  outline: none;
+  border-color: #004080;
+}
+
+.controls input[type="text"] {
+  width: 250px;
+}
+
+.controls select {
+  min-width: 180px;
+  cursor: pointer;
+}
+
+/* Back Button */
+.button-container {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #004080;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Form Count */
+.form-count {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Category Sections */
+.category-section {
+  margin-bottom: 30px;
+}
+
+.category-header {
+  background: linear-gradient(135deg, #004080, #003366);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.category-header a {
+  color: #ffd700;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.category-header a:hover {
+  text-decoration: underline;
+}
+
+/* Main Forms Table */
+.forms-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table wrapper for horizontal scrolling on small screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.forms-table thead {
+  background: linear-gradient(135deg, #004080, #003366);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.forms-table th {
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.forms-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.forms-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.forms-table tbody tr:hover {
+  background-color: #e8f4fc;
+}
+
+/* Zebra striping */
+.forms-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.forms-table tbody tr:nth-child(even):hover {
+  background-color: #e8f4fc;
+}
+
+/* Column Alignment */
+.forms-table th:nth-child(1),
+.forms-table td:nth-child(1) {
+  text-align: center;
+  width: 100px;
+  white-space: nowrap;
+}
+
+.forms-table th:nth-child(3),
+.forms-table td:nth-child(3) {
+  text-align: center;
+  width: 120px;
+}
+
+/* Links */
+.forms-table a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.forms-table a:hover {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+/* External Link Icon */
+.forms-table a[target="_blank"]::after {
+  content: " ⬈";
+  font-size: 12px;
+  color: #888;
+}
+.forms-table a[target="_blank"]:hover::after {
+  color: #0066cc;
+}
+
+/* Evaluation Reports Section */
+.evaluation-section {
+  margin: 30px 0;
+}
+
+.evaluation-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.evaluation-table thead {
+  background: linear-gradient(135deg, #2c5282, #1a365d);
+}
+
+.evaluation-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+}
+
+.evaluation-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.evaluation-table tbody tr:hover {
+  background-color: #ebf8ff;
+}
+
+.evaluation-table tbody tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+.evaluation-table tbody tr:nth-child(even):hover {
+  background-color: #ebf8ff;
+}
+
+/* Bonus Agreements Section */
+.bonus-section {
+  margin: 30px 0;
+}
+
+.bonus-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bonus-table thead {
+  background: linear-gradient(135deg, #276749, #1d4e3e);
+}
+
+.bonus-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+}
+
+.bonus-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.bonus-table tbody tr:hover {
+  background-color: #f0fff4;
+}
+
+.bonus-table tbody tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+.bonus-table tbody tr:nth-child(even):hover {
+  background-color: #f0fff4;
+}
+
+/* Enlistment Bonus Section */
+.enlistment-section {
+  margin: 30px 0;
+}
+
+.enlistment-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.enlistment-table thead {
+  background: linear-gradient(135deg, #744210, #5d3a0a);
+}
+
+.enlistment-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+}
+
+.enlistment-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.enlistment-table tbody tr:hover {
+  background-color: #fffff0;
+}
+
+.enlistment-table tbody tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+.enlistment-table tbody tr:nth-child(even):hover {
+  background-color: #fffff0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #004080;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: #003366;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+/* No Results Message */
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+  background: white;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls input[type="text"],
+  .controls select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .forms-table {
+    font-size: 13px;
+  }
+
+  .forms-table th,
+  .forms-table td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    padding: 12px 15px;
+  }
+
+  .controls {
+    padding: 10px;
+  }
+
+  .forms-table {
     display: block;
-    width: 150px;
-    margin: 20px auto;
-    text-align: center;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .forms-table th,
+  .forms-table td {
+    min-width: 150px;
+  }
+
+  .forms-table th:nth-child(1),
+  .forms-table td:nth-child(1) {
+    min-width: 80px;
+  }
+
+  .forms-table th:nth-child(3),
+  .forms-table td:nth-child(3) {
+    min-width: 100px;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .category-header {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+    border-width: 3px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .form-count {
+    font-size: 12px;
+  }
+
+  .forms-table {
+    font-size: 12px;
+  }
+
+  .forms-table th,
+  .forms-table td {
+    padding: 8px 6px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .controls,
+  .back-to-top,
+  .button-container {
+    display: none;
+  }
+
+  .forms-table,
+  .evaluation-table,
+  .bonus-table,
+  .enlistment-table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .forms-table th,
+  .forms-table td {
+    border: 1px solid #000;
+  }
 }

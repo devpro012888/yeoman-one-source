@@ -1,5 +1,50 @@
 // Update the #currentDate element with a localized date string and schedule daily updates at midnight
 document.addEventListener("DOMContentLoaded", () => {
+  // Sidebar toggle functionality for mobile
+  const toggleLeftBtn = document.getElementById("toggleLeftSidebar");
+  const toggleRightBtn = document.getElementById("toggleRightSidebar");
+  const leftSidebar = document.querySelector(".sidebar");
+  const rightSidebar = document.querySelector(".sidebar2");
+
+  // Toggle left sidebar
+  if (toggleLeftBtn && leftSidebar) {
+    toggleLeftBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      leftSidebar.classList.toggle("show");
+      // Close right sidebar if open
+      if (rightSidebar && rightSidebar.classList.contains("show")) {
+        rightSidebar.classList.remove("show");
+      }
+    });
+  }
+
+  // Toggle right sidebar
+  if (toggleRightBtn && rightSidebar) {
+    toggleRightBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      rightSidebar.classList.toggle("show");
+      // Close left sidebar if open
+      if (leftSidebar && leftSidebar.classList.contains("show")) {
+        leftSidebar.classList.remove("show");
+      }
+    });
+  }
+
+  // Close sidebars when clicking on main content
+  const mainContent = document.querySelector(".main-content");
+  if (mainContent) {
+    mainContent.addEventListener("click", () => {
+      if (leftSidebar) {
+        leftSidebar.classList.remove("show");
+      }
+      if (rightSidebar) {
+        rightSidebar.classList.remove("show");
+      }
+    });
+  }
+
   function updateDate() {
     const el = document.getElementById("currentDate");
     if (!el) {

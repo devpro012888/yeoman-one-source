@@ -3,14 +3,206 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
 }
 
 /* Main container to push content below the navbar */
 .main-content {
-  margin-top: 20px; /* Adjust this value to match the height of the navbar */
+  margin-top: 20px;
   margin-left: 300px; /* Same as the sidebar width */
   margin-right: 300px; /* Same as the sidebar2 width */
   padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 15px;
+  }
+
+  /* Show sidebar toggle buttons on mobile */
+  .sidebar-toggle-left,
+  .sidebar-toggle-right {
+    display: block;
+  }
+
+  .sidebar-toggle-left {
+    left: 0;
+  }
+
+  .sidebar-toggle-right {
+    right: 0;
+  }
+
+  /* Hide sidebars by default on mobile */
+  .sidebar,
+  .sidebar2 {
+    display: none;
+  }
+
+  /* Show sidebars when toggled */
+  .sidebar.show,
+  .sidebar2.show {
+    display: block;
+  }
+
+  /* Make sidebars overlay content on mobile */
+  .sidebar,
+  .sidebar2 {
+    position: fixed;
+    z-index: 1040; /* Higher than buttons */
+    background-color: #f8f9fa;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+
+  .sidebar.show {
+    left: 0;
+    top: 56px;
+  }
+
+  .sidebar2.show {
+    right: 0;
+    top: 56px;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+    margin: 15px 0 10px 0;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
+    margin: 12px 0 8px 0;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .content ul {
+    padding-left: 20px;
+  }
+
+  .content li {
+    margin-bottom: 8px;
+  }
+
+  /* Adjust search form for mobile */
+  .d-flex {
+    flex-wrap: wrap;
+  }
+
+  .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 10px;
+    min-height: 44px; /* Touch-friendly minimum */
+  }
+
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 15px;
+  }
+
+  /* Improve button size on navbar */
+  .navbar-toggler {
+    padding: 10px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Dropdown menu adjustments */
+  .dropdown-menu {
+    position: static;
+    height: auto;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 5px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 10px;
+  }
+
+  section {
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet view (landscape) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .main-content {
+    margin-left: 0;
+    margin-right: 250px;
+    padding: 20px;
+  }
+
+  /* Show left sidebar toggle on tablet */
+  .sidebar-toggle-left {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 300px;
+    height: calc(100vh - 56px);
+    z-index: 1040;
+  }
+
+  .sidebar.show {
+    display: block;
+  }
+
+  .sidebar2 {
+    width: 250px;
+  }
+}
+
+/* Extra small devices (less than 376px) */
+@media (max-width: 375px) {
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    padding: 0.3rem 0;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .content h1 {
+    font-size: 1.3rem;
+  }
+
+  .content h2 {
+    font-size: 1rem;
+  }
+
+  .form-control,
+  .btn {
+    font-size: 14px;
+  }
 }
 
 /* 
@@ -46,12 +238,45 @@ body {
   border-right: 1px solid #ddd;
 }
 
+/* Hide sidebar toggle buttons on desktop (default) */
+.sidebar-toggle-left,
+.sidebar-toggle-right {
+  display: none;
+  position: fixed;
+  top: 70px;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 1039;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle-left {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.sidebar-toggle-right {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.sidebar-toggle-left:hover,
+.sidebar-toggle-right:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 .links {
   display: flex;
   flex-direction: column;
   gap: 8px;
   max-height: 400px; /* Set a max height for the links container */
-  overflow-y: auto;   /* Enable vertical scrolling if content overflows */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
   padding-right: 8px; /* Optional: add some padding for scrollbar */
 }
 
@@ -68,12 +293,15 @@ body {
   text-align: center;
 }
 
-
 .sidebar a {
   display: block;
   color: #000;
   padding: 10px 15px;
   text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
 }
 
 .shortcuts {
@@ -107,9 +335,9 @@ footer {
 }
 
 #clock {
-    font-size: 1.25rem;
-    font-family: monospace;
-    font-weight: bold;
+  font-size: 1.25rem;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 /* Sidebar date and clock styles */
@@ -181,4 +409,66 @@ footer {
   line-height: 1.5;
   font-size: small;
   margin-bottom: 10px;
+}
+
+/* Mobile optimization: Improve form inputs */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+select,
+textarea {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Improve navbar responsiveness */
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Navigation items touch-friendly */
+.nav-link {
+  padding: 0.7rem 0.5rem !important;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown items should be touch-friendly */
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* Improve readability on mobile */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .dropdown-item {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  @supports (padding: max(0px)) {
+    .main-content {
+      padding: 15px max(15px, env(safe-area-inset-right));
+      padding-left: max(15px, env(safe-area-inset-left));
+    }
+  }
 }

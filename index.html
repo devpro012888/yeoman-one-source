@@ -684,6 +684,24 @@
       </div>
     </nav>
 
+    <!-- Left Sidebar Toggle Button -->
+    <button
+      class="sidebar-toggle-left"
+      id="toggleLeftSidebar"
+      aria-label="Open shortcuts menu"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Right Sidebar Toggle Button -->
+    <button
+      class="sidebar-toggle-right"
+      id="toggleRightSidebar"
+      aria-label="Open date and clock"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
     <!-- Sidebar -->
 
     <div class="sidebar">
@@ -807,6 +825,7 @@
     body {
       height: 100%;
       margin: 0;
+      font-size: 16px; /* Base font size for better readability */
     }
     body {
       display: flex;
@@ -814,12 +833,39 @@
     }
     .main-content {
       flex: 1;
+      display: flex;
+      flex-direction: column;
     }
     footer {
-      height: 56px; /* Matches the default height of the Bootstrap navbar */
-      position: fixed;
-      bottom: 0;
+      height: auto;
+      padding: 15px 10px;
+      position: relative;
+      bottom: auto;
       width: 100%;
+      margin-top: auto;
+    }
+
+    /* Ensure proper spacing between navbar and content */
+    .main-content {
+      padding-top: 56px; /* Match navbar height */
+    }
+
+    /* Add touch-friendly link sizes */
+    a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      html,
+      body {
+        height: auto;
+      }
+
+      footer {
+        position: relative;
+      }
     }
   </style>
   <script src="home.js"></script>

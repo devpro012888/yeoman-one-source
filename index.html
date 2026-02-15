@@ -689,8 +689,10 @@
       class="sidebar-toggle-left"
       id="toggleLeftSidebar"
       aria-label="Open shortcuts menu"
+      aria-controls="left-drawer"
+      aria-expanded="false"
     >
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-chevron-right"></i>
     </button>
 
     <!-- Right Sidebar Toggle Button -->
@@ -698,13 +700,22 @@
       class="sidebar-toggle-right"
       id="toggleRightSidebar"
       aria-label="Open date and clock"
+      aria-controls="right-drawer"
+      aria-expanded="false"
     >
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-clock"></i>
     </button>
 
     <!-- Sidebar -->
 
-    <div class="sidebar">
+    <div class="sidebar" id="left-drawer" role="navigation" aria-hidden="true">
+      <button
+        class="close-sidebar"
+        id="closeLeftSidebar"
+        aria-label="Close shortcuts menu"
+      >
+        <i class="fas fa-times"></i>
+      </button>
       <label class="shortcuts"><h5>Your Shortcuts</h5></label>
       <a href="https://hcm.direct-access.uscg.mil/" target="_blank"
         ><i class="fas fa-link"></i> Direct Access</a
@@ -743,7 +754,19 @@
     </div>
 
     <!-- Right Sidebar (calendar removed) -->
-    <div class="sidebar2">
+    <div
+      class="sidebar2"
+      id="right-drawer"
+      role="complementary"
+      aria-hidden="true"
+    >
+      <button
+        class="close-sidebar"
+        id="closeRightSidebar"
+        aria-label="Close date and clock"
+      >
+        <i class="fas fa-times"></i>
+      </button>
       <section class="sectionone">
         <div class="sidebar-date">
           <span id="currentDate" role="note" aria-live="polite"></span>
@@ -759,8 +782,20 @@
       <section class="sectiontwo"></section>
     </div>
 
+    <!-- Overlay for off-canvas drawers -->
+    <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+
     <!-- Page content -->
     <div class="main-content">
+      <!-- Mobile sidebar access hint -->
+      <div class="mobile-sidebar-hint">
+        <p>Access sidebars using the buttons on the edges of the screen</p>
+        <div class="hint-icons">
+          <span><i class="fas fa-chevron-left"></i> Shortcuts</span>
+          <span>Date/Time <i class="fas fa-chevron-right"></i></span>
+        </div>
+      </div>
+
       <div class="content">
         <h1>Welcome to Yeoman One Source</h1>
         <p>

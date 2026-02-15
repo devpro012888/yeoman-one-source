@@ -1,125 +1,188 @@
 // Update the #currentDate element with a localized date string and schedule daily updates at midnight
 document.addEventListener("DOMContentLoaded", () => {
-  // Sidebar toggle functionality for mobile
   const toggleLeftBtn = document.getElementById("toggleLeftSidebar");
   const toggleRightBtn = document.getElementById("toggleRightSidebar");
-  const leftSidebar = document.querySelector(".sidebar");
-  const rightSidebar = document.querySelector(".sidebar2");
+  const leftSidebar =
+    document.getElementById("left-drawer") ||
+    document.querySelector(".sidebar");
+  const rightSidebar =
+    document.getElementById("right-drawer") ||
+    document.querySelector(".sidebar2");
+  const overlay = document.getElementById("overlay");
 
-  // Toggle left sidebar
+  function setAriaFor(button, drawer, open) {
+    if (button) button.setAttribute("aria-expanded", open ? "true" : "false");
+    if (drawer) drawer.setAttribute("aria-hidden", open ? "false" : "true");
+    if (overlay) overlay.setAttribute("aria-hidden", open ? "false" : "true");
+  }
+
+  function closeAll() {
+    if (leftSidebar) leftSidebar.classList.remove("show");
+    if (rightSidebar) rightSidebar.classList.remove("show");
+    if (toggleLeftBtn) {
+      toggleLeftBtn.setAttribute("aria-expanded", "false");
+      toggleLeftBtn.classList.remove("open");
+    }
+    if (toggleRightBtn) {
+      toggleRightBtn.setAttribute("aria-expanded", "false");
+      toggleRightBtn.classList.remove("open");
+    }
+    if (overlay) overlay.classList.remove("open");
+    setAriaFor(toggleLeftBtn, leftSidebar, false);
+    setAriaFor(toggleRightBtn, rightSidebar, false);
+  }
+
+  function openDrawer(drawer, opener) {
+    // Close other drawer
+    if (drawer === leftSidebar && rightSidebar) {
+      rightSidebar.classList.remove("show");
+      if (toggleRightBtn) {
+        toggleRightBtn.setAttribute("aria-expanded", "false");
+        toggleRightBtn.classList.remove("open");
+      }
+    }
+    if (drawer === rightSidebar && leftSidebar) {
+      leftSidebar.classList.remove("show");
+      if (toggleLeftBtn) {
+        toggleLeftBtn.setAttribute("aria-expanded", "false");
+        toggleLeftBtn.classList.remove("open");
+      }
+    }
+
+    const willOpen = !drawer.classList.contains("show");
+    if (willOpen) {
+      drawer.classList.add("show");
+      if (opener) opener.classList.add("open");
+      if (overlay) overlay.classList.add("open");
+      setAriaFor(opener, drawer, true);
+      // Move focus into drawer (first focusable)
+      const focusable = drawer.querySelector(
+        'a, button, input, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable) focusable.focus();
+    } else {
+      drawer.classList.remove("show");
+      if (opener) opener.classList.remove("open");
+      if (overlay) overlay.classList.remove("open");
+      setAriaFor(opener, drawer, false);
+      if (opener) opener.focus();
+    }
+  }
+
   if (toggleLeftBtn && leftSidebar) {
     toggleLeftBtn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      leftSidebar.classList.toggle("show");
-      // Close right sidebar if open
-      if (rightSidebar && rightSidebar.classList.contains("show")) {
-        rightSidebar.classList.remove("show");
-      }
+      openDrawer(leftSidebar, toggleLeftBtn);
     });
   }
 
-  // Toggle right sidebar
   if (toggleRightBtn && rightSidebar) {
     toggleRightBtn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      rightSidebar.classList.toggle("show");
-      // Close left sidebar if open
-      if (leftSidebar && leftSidebar.classList.contains("show")) {
-        leftSidebar.classList.remove("show");
-      }
+      openDrawer(rightSidebar, toggleRightBtn);
     });
   }
 
-  // Close sidebars when clicking on main content
+  // Close buttons inside sidebars
+  const closeLeftBtn = document.getElementById("closeLeftSidebar");
+  const closeRightBtn = document.getElementById("closeRightSidebar");
+
+  if (closeLeftBtn && leftSidebar) {
+    closeLeftBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeAll();
+      if (toggleLeftBtn) toggleLeftBtn.focus();
+    });
+  }
+
+  if (closeRightBtn && rightSidebar) {
+    closeRightBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeAll();
+      if (toggleRightBtn) toggleRightBtn.focus();
+    });
+  }
+
+  // Clicking the overlay closes drawers
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      closeAll();
+    });
+  }
+
+  // Clicking main content closes drawers
   const mainContent = document.querySelector(".main-content");
   if (mainContent) {
     mainContent.addEventListener("click", () => {
-      if (leftSidebar) {
-        leftSidebar.classList.remove("show");
-      }
-      if (rightSidebar) {
-        rightSidebar.classList.remove("show");
-      }
+      closeAll();
     });
   }
 
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Esc") {
+      closeAll();
+    }
+  });
+
   function updateDate() {
     const el = document.getElementById("currentDate");
-    if (!el) {
-      // If the element doesn't exist, there's nothing to update
-      return;
-    }
+    if (!el) return;
     const options = { year: "numeric", month: "long", day: "numeric" };
     el.textContent = new Date().toLocaleDateString("en-US", options);
   }
 
-  // Update immediately once DOM is ready
   updateDate();
 
-  // Schedule exact midnight update: calculate milliseconds until next midnight,
-  // then set a timeout for that delay and schedule a 24-hour interval thereafter.
   function scheduleDailyUpdateAtMidnight() {
     const now = new Date();
-    // Set to next midnight (start of next day)
     const nextMidnight = new Date(now);
     nextMidnight.setHours(24, 0, 0, 0);
     const msUntilMidnight = nextMidnight.getTime() - now.getTime();
-
-    // Run once at next midnight, then every 24 hours
     setTimeout(() => {
       try {
         updateDate();
       } catch (e) {
-        console.error("Error updating date:", e);
+        console.error(e);
       }
       setInterval(
         () => {
           try {
             updateDate();
           } catch (e) {
-            console.error("Error updating date:", e);
+            console.error(e);
           }
         },
         24 * 60 * 60 * 1000,
-      ); // 24 hours
+      );
     }, msUntilMidnight);
   }
 
-  // Only schedule midnight updates if the element exists on the page
-  if (document.getElementById("currentDate")) {
-    scheduleDailyUpdateAtMidnight();
-  }
+  if (document.getElementById("currentDate")) scheduleDailyUpdateAtMidnight();
 });
 
 // Simple digital clock updating every second
-// Simple digital clock updating every second
 function updateClock() {
   const clockEl = document.getElementById("clock");
-  if (!clockEl) return; // If missing, just skip
+  if (!clockEl) return;
   const now = new Date();
-
-  // Format time with leading zeros
   const hours = String(now.getHours()).padStart(2, "0");
   const minutes = String(now.getMinutes()).padStart(2, "0");
   const seconds = String(now.getSeconds()).padStart(2, "0");
-
-  const timeString = `${hours}:${minutes}:${seconds}`;
-  clockEl.textContent = timeString;
+  clockEl.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// Update immediately, then schedule aligned second updates (only if #clock exists)
 if (document.getElementById("clock")) {
   function scheduleClock() {
     updateClock();
-    // Align to next second boundary
     const now = new Date();
     const delay = 1000 - now.getMilliseconds();
     setTimeout(() => {
-      // Respect page visibility: don't spin when hidden
       if (document.hidden) {
-        // Try again on visibility change
         document.addEventListener("visibilitychange", function onVis() {
           if (!document.hidden) {
             document.removeEventListener("visibilitychange", onVis);

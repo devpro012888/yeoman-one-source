@@ -626,3 +626,19 @@ textarea {
     }
   }
 }
+
+/* Styles Right Sidebar PPC Information */
+.ppc-mailing-address {
+  text-align: left;
+}
+
+.ppc-address {
+  line-height: 1.5;
+  font-size: small;
+}
+
+.customer-support {
+  text-align: left;
+  font-size: small;
+  line-height: 1.5;
+}

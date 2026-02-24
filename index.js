@@ -196,3 +196,113 @@ if (document.getElementById("clock")) {
   }
   scheduleClock();
 }
+
+// Paycut Dates Widget - Displays next paycut date and auto-updates
+document.addEventListener("DOMContentLoaded", () => {
+  const paycutDateEl = document.getElementById("paycutDate");
+  const paycutCountdownEl = document.getElementById("paycutCountdown");
+
+  if (!paycutDateEl) return;
+
+  // Generate paycut dates for the current and next year (1st and 15th of each month)
+  function generatePaycutDates() {
+    const dates = [];
+    const currentYear = new Date().getFullYear();
+    const nextYear = currentYear + 1;
+
+    // Add dates for current year and next year
+    [currentYear, nextYear].forEach((year) => {
+      for (let month = 0; month < 12; month++) {
+        // 1st of the month
+        dates.push(new Date(year, month, 1));
+        // 15th of the month
+        dates.push(new Date(year, month, 15));
+      }
+    });
+
+    // Sort dates in chronological order
+    return dates.sort((a, b) => a.getTime() - b.getTime());
+  }
+
+  // Get the next upcoming paycut date
+  function getNextPaycutDate() {
+    const paycutDates = generatePaycutDates();
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    for (const date of paycutDates) {
+      if (date >= now) {
+        return date;
+      }
+    }
+    return null; // No future paycut dates found
+  }
+
+  // Calculate days until paycut date
+  function getDaysUntilPaycut(paycutDate) {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    const diffTime = paycutDate.getTime() - now.getTime();
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+  }
+
+  // Format date for display
+  function formatPaycutDate(date) {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  }
+
+  // Update the paycut display
+  function updatePaycutDisplay() {
+    const nextPaycut = getNextPaycutDate();
+
+    if (nextPaycut) {
+      paycutDateEl.textContent = formatPaycutDate(nextPaycut);
+
+      const daysUntil = getDaysUntilPaycut(nextPaycut);
+      if (daysUntil === 0) {
+        paycutCountdownEl.textContent = "Paycut is today!";
+      } else if (daysUntil === 1) {
+        paycutCountdownEl.textContent = "1 day until paycut";
+      } else {
+        paycutCountdownEl.textContent = `${daysUntil} days until paycut`;
+      }
+    } else {
+      paycutDateEl.textContent = "No upcoming dates";
+      paycutCountdownEl.textContent = "";
+    }
+  }
+
+  // Initial update
+  updatePaycutDisplay();
+
+  // Schedule daily updates at midnight
+  function schedulePaycutUpdate() {
+    const now = new Date();
+    const nextMidnight = new Date(now);
+    nextMidnight.setHours(24, 0, 0, 0);
+    const msUntilMidnight = nextMidnight.getTime() - now.getTime();
+
+    setTimeout(() => {
+      try {
+        updatePaycutDisplay();
+      } catch (e) {
+        console.error(e);
+      }
+      // Then update every 24 hours
+      setInterval(
+        () => {
+          try {
+            updatePaycutDisplay();
+          } catch (e) {
+            console.error(e);
+          }
+        },
+        24 * 60 * 60 * 1000,
+      );
+    }, msUntilMidnight);
+  }
+
+  schedulePaycutUpdate();
+});

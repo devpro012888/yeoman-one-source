@@ -673,11 +673,15 @@
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Search"
-              aria-label="Search"
+              placeholder="Search topics..."
+              aria-label="Search topics"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              aria-label="Submit search"
+            >
+              <i class="fas fa-search"></i>
             </button>
           </form>
         </div>
@@ -745,11 +749,8 @@
         <a href="#">Computations</a>
         <a href="#">DA Guides</a>
         <a href="../yeoman-one-source/forms/forms.html">Forms and Worksheets</a>
-        <a href="#">Known Issues</a>
-        <a href="#">Pay Research</a>
-        <a href="#">PPM</a>
+        <a href="#">3PM</a>
         <a href="#">Reference Library</a>
-        <a href="#">System Availablilty</a>
       </div>
     </div>
 
@@ -780,24 +781,15 @@
         ></div>
       </section>
       <section class="sectiontwo">
-        <div class="ppc-mailing-address">
-          <h5 class="ppc-address"><b>PPC Mailing Address</b></h5>
-          <p class="ppc-address">
-            Coast Guard Pay and Personnel Center<br />
-            444 SE Quincy Street<br />
-            Topeka, KS 66683-3591
-          </p>
-        </div>
-        <hr />
-        <div class="customer-support">
-          <h5 class="customer-support"><b>Customer Support Telephone:</b></h5>
-          <h5 class="customer-support"><b>PPC Customer Service</b></h5>
-          <p>
-            Personnel/Administrative Issues (not related to DA technical
-            issues).
-          </p>
-          <a href="8667728724">(866) 772-8724</a>
-          <p>7:30AM - 4:00PM (Central time) M-F</p>
+        <div class="paycut-widget">
+          <h3><i class="fas fa-calendar-alt"></i> Paycut Dates</h3>
+          <div class="paycut-date-display">
+            <span id="paycutLabel">Next Paycut:</span>
+            <span id="paycutDate" role="note" aria-live="polite"></span>
+          </div>
+          <div class="paycut-countdown">
+            <span id="paycutCountdown"></span>
+          </div>
         </div>
       </section>
     </div>
@@ -843,9 +835,9 @@
           <h2>Key Features</h2>
           <ul>
             <li>Access to administrative forms and worksheets</li>
-            <li>Manage payroll, benefits, and leave</li>
             <li>Reserve-specific resources</li>
             <li>Travel and transportation tools</li>
+            <li>Yeoman GPT</li>
           </ul>
         </section>
 
@@ -853,8 +845,11 @@
         <section id="getting-started">
           <h2>Getting Started</h2>
           <p>
-            Provide step-by-step instructions or links to help users get started
-            with the platform.
+            The website is broken up into four main sections. Each section
+            contains a dropdown menu with various topics related to that
+            section. Click on any topic to access detailed information,
+            resources, and guidance to help you navigate your Yeoman
+            responsibilities with confidence and ease.
           </p>
         </section>
 
@@ -862,8 +857,10 @@
         <section id="support">
           <h2>Support</h2>
           <p>
-            If you need assistance, please visit our
-            <a href="#support-page">Support Page</a> or contact us directly.
+            If you need assistance, please email
+            <a class="email" href="mailto:christopher.e.white2@gmail.com"
+              >Christopher E. White</a
+            >.
           </p>
         </section>
       </div>

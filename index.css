@@ -578,6 +578,53 @@ textarea {
   box-sizing: border-box;
 }
 
+/* Paycut Dates Widget Styles */
+.paycut-widget {
+  text-align: center;
+  padding: 10px;
+}
+
+.paycut-widget h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.paycut-widget h3 i {
+  color: #007bff;
+}
+
+.paycut-date-display {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #212529;
+  margin-bottom: 8px;
+}
+
+.paycut-date-display #paycutLabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.paycut-date-display #paycutDate {
+  display: block;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.paycut-countdown {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
 /* Improve navbar responsiveness */
 .navbar {
   padding: 0.5rem 1rem;
@@ -626,19 +673,7 @@ textarea {
     }
   }
 }
-
-/* Styles Right Sidebar PPC Information */
-.ppc-mailing-address {
-  text-align: left;
-}
-
-.ppc-address {
-  line-height: 1.5;
-  font-size: small;
-}
-
-.customer-support {
-  text-align: left;
-  font-size: small;
-  line-height: 1.5;
+/* Email link styles */
+.email {
+  text-decoration: none;
 }
